@@ -1,0 +1,251 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Item
+{
+    int itemID;
+    string itemName;
+    string category;
+    string location;
+    string status;
+
+    Item* next;
+};
+
+Item* head = nullptr;
+
+
+// Function to add a new item
+void addItem()
+{
+    Item* newNode = new Item;
+
+    cout << "\nEnter Item ID: ";
+    cin >> newNode->itemID;
+
+    cin.ignore();
+
+    cout << "Enter Item Name: ";
+    getline(cin, newNode->itemName);
+
+    cout << "Enter Category: ";
+    getline(cin, newNode->category);
+
+    cout << "Enter Location: ";
+    getline(cin, newNode->location);
+
+    cout << "Enter Status (Lost/Found): ";
+    getline(cin, newNode->status);
+
+    newNode->next = nullptr;
+
+    if (head == nullptr)
+    {
+        head = newNode;
+    }
+    else
+    {
+        Item* temp = head;
+
+        while (temp->next != nullptr)
+        {
+            temp = temp->next;
+        }
+
+        temp->next = newNode;
+    }
+
+    cout << "\nItem added successfully!\n";
+}
+
+
+// Function to display all items
+void displayItems()
+{
+    if (head == nullptr)
+    {
+        cout << "\nNo records available.\n";
+        return;
+    }
+
+    Item* temp = head;
+
+    cout << "\n========== LOST & FOUND RECORDS ==========\n";
+
+    while (temp != nullptr)
+    {
+        cout << "\nItem ID   : " << temp->itemID;
+        cout << "\nItem Name : " << temp->itemName;
+        cout << "\nCategory  : " << temp->category;
+        cout << "\nLocation  : " << temp->location;
+        cout << "\nStatus    : " << temp->status;
+
+        cout << "\n------------------------------------------";
+
+        temp = temp->next;
+    }
+
+    cout << endl;
+}
+
+
+// Function to search an item
+void searchItem()
+{
+    int id;
+
+    cout << "\nEnter Item ID to search: ";
+    cin >> id;
+
+    Item* temp = head;
+
+    while (temp != nullptr)
+    {
+        if (temp->itemID == id)
+        {
+            cout << "\n========== ITEM FOUND ==========\n";
+
+            cout << "Item ID   : " << temp->itemID << endl;
+            cout << "Item Name : " << temp->itemName << endl;
+            cout << "Category  : " << temp->category << endl;
+            cout << "Location  : " << temp->location << endl;
+            cout << "Status    : " << temp->status << endl;
+
+            return;
+        }
+
+        temp = temp->next;
+    }
+
+    cout << "\nItem not found!\n";
+}
+
+
+// Function to update item
+void updateItem()
+{
+    int id;
+
+    cout << "\nEnter Item ID to update: ";
+    cin >> id;
+
+    Item* temp = head;
+
+    while (temp != nullptr)
+    {
+        if (temp->itemID == id)
+        {
+            cin.ignore();
+
+            cout << "Enter New Location: ";
+            getline(cin, temp->location);
+
+            cout << "Enter New Status: ";
+            getline(cin, temp->status);
+
+            cout << "\nRecord updated successfully!\n";
+
+            return;
+        }
+
+        temp = temp->next;
+    }
+
+    cout << "\nItem not found!\n";
+}
+
+
+// Function to delete an item
+void deleteItem()
+{
+    int id;
+
+    cout << "\nEnter Item ID to delete: ";
+    cin >> id;
+
+    Item* temp = head;
+    Item* previous = nullptr;
+
+    while (temp != nullptr && temp->itemID != id)
+    {
+        previous = temp;
+        temp = temp->next;
+    }
+
+    if (temp == nullptr)
+    {
+        cout << "\nItem not found!\n";
+        return;
+    }
+
+    if (previous == nullptr)
+    {
+        head = temp->next;
+    }
+    else
+    {
+        previous->next = temp->next;
+    }
+
+    delete temp;
+
+    cout << "\nItem deleted successfully!\n";
+}
+
+
+// Main function
+int main()
+{
+    int choice;
+
+    do
+    {
+        cout << "\n\n==========================================";
+        cout << "\n SMART CAMPUS LOST & FOUND SYSTEM";
+        cout << "\n==========================================";
+
+        cout << "\n1. Add Item";
+        cout << "\n2. Display All Items";
+        cout << "\n3. Search Item";
+        cout << "\n4. Update Item";
+        cout << "\n5. Delete Item";
+        cout << "\n6. Exit";
+
+        cout << "\n\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                addItem();
+                break;
+
+            case 2:
+                displayItems();
+                break;
+
+            case 3:
+                searchItem();
+                break;
+
+            case 4:
+                updateItem();
+                break;
+
+            case 5:
+                deleteItem();
+                break;
+
+            case 6:
+                cout << "\nThank you!\n";
+                break;
+
+            default:
+                cout << "\nInvalid choice!\n";
+        }
+
+    } while (choice != 6);
+
+    return 0;
+}
