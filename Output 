@@ -1,6 +1,6 @@
-==========================================
+====================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+====================================
 
 1. Add Item
 2. Display All Items
@@ -20,9 +20,9 @@ Enter Status (Lost/Found): Found
 Item added successfully!
 
 
-==========================================
+====================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+====================================
 
 1. Add Item
 2. Display All Items
@@ -42,32 +42,32 @@ Enter Status (Lost/Found): Lost
 Item added successfully!
 
 
-==========================================
+====================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+====================================
 
 Enter your choice: 2
 
-========== LOST & FOUND RECORDS ==========
+========== LOST & FOUND RECORDS=========
 
 Item ID   : 101
 Item Name : Calculator
 Category  : Electronics
 Location  : Electronics Lab
 Status    : Found
-------------------------------------------
+------------------------------------
 
 Item ID   : 102
 Item Name : ID Card
 Category  : Documents
 Location  : Canteen
 Status    : Lost
-------------------------------------------
+------------------------------------
 
 
-==========================================
+====================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+===================================
 
 Enter your choice: 3
 
@@ -81,9 +81,9 @@ Location  : Electronics Lab
 Status    : Found
 
 
-==========================================
+====================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+====================================
 
 Enter your choice: 4
 
@@ -94,9 +94,9 @@ Enter New Status: Found
 Record updated successfully!
 
 
-==========================================
+====================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+====================================
 
 Enter your choice: 5
 
@@ -105,9 +105,9 @@ Enter Item ID to delete: 101
 Item deleted successfully!
 
 
-==========================================
+====================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+====================================
 
 Enter your choice: 2
 
@@ -118,12 +118,12 @@ Item Name : ID Card
 Category  : Documents
 Location  : Library
 Status    : Found
-------------------------------------------
+------------------------------------
 
 
-==========================================
+===================================
    SMART CAMPUS LOST & FOUND SYSTEM
-==========================================
+====================================
 
 Enter your choice: 6
 
