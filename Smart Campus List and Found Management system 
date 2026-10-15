@@ -13,7 +13,7 @@ struct Item
     Item* next;
 };
 
-Item* head = nullptr;
+Item* head = NULL;
 
 
 // Function to add a new item
@@ -38,9 +38,9 @@ void addItem()
     cout << "Enter Status (Lost/Found): ";
     getline(cin, newNode->status);
 
-    newNode->next = nullptr;
+    newNode->next = NULL;
 
-    if (head == nullptr)
+    if (head == NULL)
     {
         head = newNode;
     }
@@ -48,7 +48,7 @@ void addItem()
     {
         Item* temp = head;
 
-        while (temp->next != nullptr)
+        while (temp->next != NULL)
         {
             temp = temp->next;
         }
@@ -63,7 +63,7 @@ void addItem()
 // Function to display all items
 void displayItems()
 {
-    if (head == nullptr)
+    if (head == NULL)
     {
         cout << "\nNo records available.\n";
         return;
@@ -73,7 +73,7 @@ void displayItems()
 
     cout << "\n========== LOST & FOUND RECORDS ==========\n";
 
-    while (temp != nullptr)
+    while (temp != NULL)
     {
         cout << "\nItem ID   : " << temp->itemID;
         cout << "\nItem Name : " << temp->itemName;
@@ -100,7 +100,7 @@ void searchItem()
 
     Item* temp = head;
 
-    while (temp != nullptr)
+    while (temp != NULL)
     {
         if (temp->itemID == id)
         {
@@ -132,7 +132,7 @@ void updateItem()
 
     Item* temp = head;
 
-    while (temp != nullptr)
+    while (temp != NULL)
     {
         if (temp->itemID == id)
         {
@@ -165,21 +165,21 @@ void deleteItem()
     cin >> id;
 
     Item* temp = head;
-    Item* previous = nullptr;
+    Item* previous = NULL;
 
-    while (temp != nullptr && temp->itemID != id)
+    while (temp != NULL && temp->itemID != id)
     {
         previous = temp;
         temp = temp->next;
     }
 
-    if (temp == nullptr)
+    if (temp == NULL)
     {
         cout << "\nItem not found!\n";
         return;
     }
 
-    if (previous == nullptr)
+    if (previous == NULL)
     {
         head = temp->next;
     }
